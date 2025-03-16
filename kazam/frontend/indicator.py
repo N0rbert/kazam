@@ -150,7 +150,9 @@ class KazamSuperIndicator(GObject.GObject):
         self.emit("indicator-quit-request")
 
 try:
-    from gi.repository import AppIndicator3
+    import gi
+    gi.require_version('AyatanaAppIndicator3', '0.1')
+    from gi.repository import AyatanaAppIndicator3 as AppIndicator3
 
     class KazamIndicator(KazamSuperIndicator):
 
